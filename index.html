@@ -8,7 +8,7 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #f5ebe0; /* Beige background */
+            background-color: #f5ebe0; /* Light beige */
             transition: 0.5s ease-in-out;
             overflow: hidden;
         }
@@ -42,24 +42,19 @@
         #no span {
             font-size: 1.2em;
         }
-        #flowers {
+        #yayMessage {
             display: none;
             position: absolute;
-            top: 30%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: auto;
-        }
-        #yay {
-            display: none;
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            background-color: #f5d7b7; /* Light beige */
+            color: #5c4033; /* Dark brown */
             font-size: 2em;
             font-weight: bold;
-            color: #5c4033; /* Dark brown */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .blur {
             filter: blur(5px);
@@ -69,18 +64,15 @@
 <body>
     <div id="container">
         <h1 id="question">Will you forgive me?</h1>
-        <button id="yes" class="btn" onclick="showFlowers()">Yes</button>
+        <button id="yes" class="btn" onclick="showMessage()">Yes</button>
         <button id="no" class="btn" onclick="moveNoButton()">No <span>😢</span></button>
     </div>
 
-    <!-- Replace with your direct image link -->
-    <img id="flowers" src="https://postimage.me/https://postimage.me/image/1000217028.UIU9We.png" alt="Bouquet of roses and tulips">
-    <div id="yay">Yay!</div>
+    <div id="yayMessage">Yay! I knew you would forgive me!</div>
 
     <script>
-        function showFlowers() {
-            document.getElementById("flowers").style.display = "block";
-            document.getElementById("yay").style.display = "block";
+        function showMessage() {
+            document.getElementById("yayMessage").style.display = "block";
             document.getElementById("container").classList.add("blur");
         }
 
