@@ -27,20 +27,16 @@
             cursor: pointer;
             margin: 20px;
             border-radius: 10px;
-            position: absolute;
+            position: relative;
         }
         #yes {
-            background-color: #f5d7b7; /* Light beige */
-            color: #5c4033;
-            left: 40%;
+            background-color: #5c4033; /* Dark brown */
+            color: #f5d7b7; /* Light brown text */
         }
         #no {
-            background-color: #d4a373; /* Light brown */
-            color: #5c4033;
-            left: 55%;
-        }
-        #no span {
-            font-size: 1.2em;
+            background-color: #f5d7b7; /* Light brown */
+            color: #5c4033; /* Brown text */
+            margin-left: 20px; /* Keep it beside Yes */
         }
         #yayMessage {
             display: none;
@@ -64,11 +60,11 @@
 <body>
     <div id="container">
         <h1 id="question">Will you forgive me?</h1>
-        <button id="yes" class="btn" onclick="showMessage()">Yes</button>
-        <button id="no" class="btn" onclick="moveNoButton()">No <span>😢</span></button>
+        <button id="yes" class="btn" onclick="showMessage()">Yes ❤️‍🩹</button>
+        <button id="no" class="btn" onclick="moveNoButton()">No 😢</button>
     </div>
 
-    <div id="yayMessage">Yay! I knew you would forgive me!</div>
+    <div id="yayMessage">Yay! I knew you'll forgive me! 🥺❤️</div>
 
     <script>
         function showMessage() {
@@ -82,6 +78,7 @@
             let maxHeight = window.innerHeight - noButton.offsetHeight;
             let newX = Math.random() * maxWidth;
             let newY = Math.random() * maxHeight;
+            noButton.style.position = "absolute";
             noButton.style.left = `${newX}px`;
             noButton.style.top = `${newY}px`;
         }
